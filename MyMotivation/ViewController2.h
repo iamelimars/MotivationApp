@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController2 : UIViewController
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *visualExxectView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

@@ -13,10 +13,15 @@
 @end
 
 @implementation ViewController2
+@synthesize visualExxectView, titleLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.visualExxectView.layer.cornerRadius = 5.0;
+    self.visualExxectView.clipsToBounds = YES;
+    
+    //self.titleLabel.text = [NSString stringWithFormat:@"Verse Of The Day %C", ue148];
 }
 
 - (void)didReceiveMemoryWarning {
