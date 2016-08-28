@@ -10,6 +10,8 @@
 #import "ViewController1.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import <ChameleonFramework/Chameleon.h>
+
 
 @interface ViewController ()
 
@@ -23,10 +25,21 @@
     self.myScrollView.delegate = self;
     [self createPageViewController];
     
-    CGRect frame = self.myScrollView.frame;
-    frame.origin.x = frame.size.width * 1;
-    frame.origin.y = 0;
+    //CGRect frame = self.myScrollView.frame;
+    //frame.origin.x = frame.size.width * 1;
+    //frame.origin.y = 0;
     self.myScrollView.contentOffset = CGPointMake(self.view.frame.size.width*1.0, 0);
+    
+    NSArray *redColors = @[[UIColor flatRedColor], [UIColor flatWatermelonColor], [UIColor flatOrangeColor], [UIColor flatYellowColor], [UIColor flatWhiteColor]];
+    
+    NSArray *blueColors = @[[UIColor flatBlueColor], [UIColor flatPowderBlueColorDark], [UIColor flatPowderBlueColor], [UIColor flatWhiteColor]];
+
+    
+    UIView *gradientView = [[UIView alloc]initWithFrame: CGRectMake(0, 0, self.view.frame.size.width * 3, self.view.frame.size.height)];
+    //gradientView.frame.size.width = self.view.frame.size.width * 3;
+    
+    
+    self.myScrollView.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame: gradientView.frame andColors:blueColors];
 
     
 }

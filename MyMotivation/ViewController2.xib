@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController2">
             <connections>
+                <outlet property="shareButton" destination="rF4-hV-FO1" id="x3k-jR-S8A"/>
                 <outlet property="titleLabel" destination="up4-Bk-HHj" id="uR1-vf-8Zo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="visualExxectView" destination="PPv-bj-U9R" id="eIh-Fg-bt8"/>

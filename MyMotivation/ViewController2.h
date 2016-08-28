@@ -11,5 +11,6 @@
 @interface ViewController2 : UIViewController
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *visualExxectView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
 @end

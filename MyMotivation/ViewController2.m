@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController2
-@synthesize visualExxectView, titleLabel;
+@synthesize visualExxectView, titleLabel, shareButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,12 +21,52 @@
     self.visualExxectView.layer.cornerRadius = 5.0;
     self.visualExxectView.clipsToBounds = YES;
     
-    //self.titleLabel.text = [NSString stringWithFormat:@"Verse Of The Day %C", ue148];
+    shareButton.layer.cornerRadius = 4.0;
+    shareButton.clipsToBounds = YES;
+    shareButton.backgroundColor = [UIColor clearColor];
+    shareButton.layer.borderWidth = 0.5;
+    shareButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    [self getVerse];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)getVerse {
+    
+    @autoreleasepool {
+    
+    
+    //NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.ourmanna.com/verses/api/get?format=json"]];
+    //NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    //NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://labs.bible.org/api/?passage=random&type=json"]];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en"]];
+
+    
+    //http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en
+        if (data ==  nil) {
+        
+            NSLog(@"error");
+        }
+        
+        
+    
+        NSError *jsonParsingError = nil;
+        NSDictionary *verse = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:&jsonParsingError];
+    
+    
+        if (!verse) {
+        
+            NSLog(@"Error parsing json %@",jsonParsingError);
+        
+        }
+        NSLog(@"%@", verse);
+    
+    //NSURLRequest *request = [NSURLRequest requestWi]
+    }
 }
 
 /*
