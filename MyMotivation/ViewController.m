@@ -69,6 +69,8 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    
+    //Change the Index of pagecontrol
     int indexOfPage = scrollView.contentOffset.x / scrollView.frame.size.width;
     NSLog(@"%i", indexOfPage);
     
