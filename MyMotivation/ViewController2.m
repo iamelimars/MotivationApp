@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     self.visualExxectView.layer.cornerRadius = 5.0;
     self.visualExxectView.clipsToBounds = YES;
     
@@ -57,7 +58,10 @@
         NSError *jsonParsingError = nil;
         NSDictionary *verse = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingAllowFragments error:&jsonParsingError];
     
-    
+        self.textView.text = verse[@"quoteText"];
+        NSString *author = verse[@"quoteAuthor"];
+        self.authorLabel.text = [NSString stringWithFormat:@"By. %@", author];
+        
         if (!verse) {
         
             NSLog(@"Error parsing json %@",jsonParsingError);

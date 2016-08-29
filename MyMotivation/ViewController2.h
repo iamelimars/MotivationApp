@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *visualExxectView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 
 @end
