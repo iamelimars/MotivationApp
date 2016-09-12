@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@import GoogleMobileAds;
 
 @interface ViewController3 : UIViewController
+{
+    
+    dispatch_queue_t bannerConcurrentQueue;
+    
+}
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end

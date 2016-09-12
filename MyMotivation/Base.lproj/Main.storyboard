@@ -20,25 +20,36 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahe-za-TBz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lc-J4-RWy">
-                                <rect key="frame" x="280" y="533" width="39" height="37"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSB-kl-Jqf" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="550" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="HOS-MU-dHd"/>
-                                    <constraint firstAttribute="height" constant="37" id="gvP-VI-V1m"/>
+                                    <constraint firstAttribute="height" constant="50" id="8rf-K4-3p3"/>
+                                    <constraint firstAttribute="width" constant="320" id="m0C-3N-IJb"/>
+                                </constraints>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="5lc-J4-RWy">
+                                <rect key="frame" x="281" y="505" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="hNj-7O-9ao"/>
+                                    <constraint firstAttribute="width" constant="39" id="wLc-jC-4lF"/>
                                 </constraints>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DSB-kl-Jqf" firstAttribute="top" secondItem="5lc-J4-RWy" secondAttribute="bottom" constant="8" id="6Rv-tZ-SuJ"/>
                             <constraint firstAttribute="trailing" secondItem="ahe-za-TBz" secondAttribute="trailing" id="7VF-HL-xMf"/>
-                            <constraint firstItem="5lc-J4-RWy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HBv-LR-DQ9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5lc-J4-RWy" secondAttribute="bottom" constant="30" id="SJr-dH-QEw"/>
+                            <constraint firstItem="5lc-J4-RWy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DTw-7N-pPZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DSB-kl-Jqf" secondAttribute="bottom" id="Thd-AJ-aPI"/>
+                            <constraint firstItem="DSB-kl-Jqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xos-7R-AZZ"/>
                             <constraint firstItem="ahe-za-TBz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hNA-if-tc9"/>
                             <constraint firstItem="ahe-za-TBz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pb4-ZI-h83"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ahe-za-TBz" secondAttribute="bottom" id="zHh-Y1-lgc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="DSB-kl-Jqf" id="W9q-pO-jQg"/>
                         <outlet property="myPageControl" destination="5lc-J4-RWy" id="fNO-R7-hkV"/>
                         <outlet property="myScrollView" destination="ahe-za-TBz" id="Q6W-iT-807"/>
                     </connections>

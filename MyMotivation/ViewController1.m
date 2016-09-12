@@ -16,14 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    /*
+
+    NSString *fullURL = @"https://www.bible.com/bible/1/jhn.1";
+    NSURL *url = [NSURL URLWithString:fullURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.bibleWebView loadRequest:requestObj];
+*/
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
 
+}
+-(void)viewDidAppear:(BOOL)animated {
+    
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -34,4 +44,8 @@
 }
 */
 
+- (IBAction)refreshButtonPressed:(id)sender {
+    
+    [self.bibleWebView reload];
+}
 @end

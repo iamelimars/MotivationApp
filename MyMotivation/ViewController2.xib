@@ -8,7 +8,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController2">
             <connections>
+                <outlet property="bannerView" destination="PcT-Hz-BDn" id="mXG-CA-uf7"/>
+                <outlet property="referenceLabel" destination="vAm-hy-vSO" id="0E7-Lc-t1i"/>
                 <outlet property="titleLabel" destination="up4-Bk-HHj" id="uR1-vf-8Zo"/>
+                <outlet property="verseTextView" destination="Ne7-2F-agp" id="UoQ-3p-r2h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="visualExxectView" destination="PPv-bj-U9R" id="eIh-Fg-bt8"/>
             </connections>
@@ -18,24 +21,23 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PPv-bj-U9R">
-                    <rect key="frame" x="40" y="41" width="520" height="520"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPv-bj-U9R">
+                    <rect key="frame" x="40" y="40" width="520" height="520"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T6k-QD-y2T">
                         <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By: Elisha Marshall" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAm-hy-vSO">
-                                <rect key="frame" x="8" y="485" width="504" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Elisha Marshall" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAm-hy-vSO">
+                                <rect key="frame" x="8" y="490" width="504" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <color key="textColor" red="0.15868747234344482" green="0.21822044253349304" blue="0.30320093035697937" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ne7-2F-agp">
-                                <rect key="frame" x="8" y="8" width="504" height="469"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Getting Verse...." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ne7-2F-agp">
+                                <rect key="frame" x="8" y="8" width="504" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.15868747234344482" green="0.21822044253349304" blue="0.30320093035697937" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -63,8 +65,8 @@
                         <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Verse Of The Day 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up4-Bk-HHj">
-                    <rect key="frame" x="169" y="20" width="262" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verse Of The Day 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="up4-Bk-HHj">
+                    <rect key="frame" x="169" y="80" width="262" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="262" id="g8P-ok-Yxr"/>
                     </constraints>
@@ -72,8 +74,8 @@
                     <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Powered by: blahblahblah.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmP-t0-jRt">
-                    <rect key="frame" x="183" y="571" width="234" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by: blahblahblah.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmP-t0-jRt">
+                    <rect key="frame" x="183" y="578" width="234" height="14"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="234" id="4S7-Oj-xWx"/>
                     </constraints>
@@ -81,21 +83,44 @@
                     <color key="textColor" red="0.67455112934112549" green="0.15692374110221863" blue="0.10914970934391022" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-Hz-BDn" customClass="GADBannerView">
+                    <rect key="frame" x="140" y="550" width="320" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="rY7-4w-9Iz"/>
+                        <constraint firstAttribute="height" constant="50" id="wbq-Jk-mbo"/>
+                    </constraints>
+                </view>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l1D-kM-XYo">
+                    <rect key="frame" x="146" y="578" width="308" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="6yu-5f-sEA"/>
+                        <constraint firstAttribute="width" constant="308" id="qsl-XA-FyL"/>
+                    </constraints>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                    </segments>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="0.89126098155975342" green="0.3545563817024231" blue="0.39968371391296387" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="l1D-kM-XYo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="484-FY-YoH"/>
                 <constraint firstItem="YmP-t0-jRt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="75v-XA-5fn"/>
+                <constraint firstItem="PcT-Hz-BDn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8sw-TG-wte"/>
+                <constraint firstItem="l1D-kM-XYo" firstAttribute="top" secondItem="PPv-bj-U9R" secondAttribute="bottom" constant="18" id="9IY-WM-5UI"/>
                 <constraint firstItem="PPv-bj-U9R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="E9f-Gj-MSP"/>
                 <constraint firstAttribute="bottom" secondItem="YmP-t0-jRt" secondAttribute="bottom" constant="8" id="G8I-oJ-Nma"/>
                 <constraint firstItem="rF4-hV-FO1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="HRQ-2K-alL"/>
                 <constraint firstAttribute="trailing" secondItem="rF4-hV-FO1" secondAttribute="trailing" constant="8" id="I2k-WB-DX1"/>
                 <constraint firstItem="up4-Bk-HHj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NvO-QD-2KB"/>
                 <constraint firstAttribute="trailing" secondItem="PPv-bj-U9R" secondAttribute="trailing" constant="40" id="UMY-o5-ibw"/>
+                <constraint firstAttribute="bottom" secondItem="PcT-Hz-BDn" secondAttribute="bottom" id="XF1-e5-f6A"/>
                 <constraint firstItem="up4-Bk-HHj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="fHg-X5-fXe"/>
                 <constraint firstItem="PPv-bj-U9R" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mdH-oQ-SHz"/>
                 <constraint firstItem="PPv-bj-U9R" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pHc-y8-CVc"/>
             </constraints>
-            <point key="canvasLocation" x="233" y="286"/>
+            <point key="canvasLocation" x="334" y="462"/>
         </view>
     </objects>
 </document>

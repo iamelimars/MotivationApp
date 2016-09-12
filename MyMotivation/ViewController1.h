@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController1 : UIViewController
+@property (weak, nonatomic) IBOutlet UIWebView *bibleWebView;
+- (IBAction)refreshButtonPressed:(id)sender;
 
 @end

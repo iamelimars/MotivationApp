@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController3">
             <connections>
+                <outlet property="bannerView" destination="rkW-jC-aKC" id="Kd4-bu-BcT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkW-jC-aKC" customClass="GADBannerView">
+                    <rect key="frame" x="140" y="550" width="320" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="42K-ae-03Q"/>
+                        <constraint firstAttribute="height" constant="50" id="vPh-kp-Snq"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="rkW-jC-aKC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Szu-17-S4l"/>
+                <constraint firstAttribute="bottom" secondItem="rkW-jC-aKC" secondAttribute="bottom" id="bw4-uc-UHm"/>
+            </constraints>
         </view>
     </objects>
 </document>

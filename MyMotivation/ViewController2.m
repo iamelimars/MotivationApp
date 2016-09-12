@@ -21,7 +21,59 @@
     self.visualExxectView.layer.cornerRadius = 5.0;
     self.visualExxectView.clipsToBounds = YES;
     
-    //self.titleLabel.text = [NSString stringWithFormat:@"Verse Of The Day %C", ue148];
+    //[self loadBanner];
+    
+    //[self getVerseOfDay];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    
+    
+    //[self getVerseOfDay];
+    
+}
+
+-(void) loadBanner {
+    
+    bannerConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(bannerConcurrentQueue, ^(void) {
+        
+        self.bannerView.adUnitID = @"ca-app-pub-9906091830733745/7340255714";
+        self.bannerView.rootViewController = self;
+        GADRequest *request = [GADRequest request];
+        request.testDevices = @[
+                            @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
+                            ];
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            
+            [self.bannerView loadRequest:[GADRequest request]];
+            
+        });
+        
+    });
+    
+    
+}
+
+- (void)getVerseOfDay {
+    
+    
+    /*
+    NSString *urlString = [NSString stringWithFormat:@"http://www.ourmanna.com/verses/api/get/?format=json"];
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    mConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(mConcurrentQueue, ^(void){
+        NSError *error;
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSLog(@"json: %@", json);
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            
+            
+        });
+        
+    });
+    */
 }
 
 - (void)didReceiveMemoryWarning {
