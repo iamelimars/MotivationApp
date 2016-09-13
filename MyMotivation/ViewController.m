@@ -32,7 +32,18 @@
     frame.origin.x = frame.size.width * 1;
     frame.origin.y = 0;
     self.myScrollView.contentOffset = CGPointMake(self.view.frame.size.width*1.0, 0);
+    
 
+}
+-(void)viewWillAppear:(BOOL)animated{
+    
+     self.navigationController.navigationBarHidden = YES;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+   
     
 }
 
@@ -60,7 +71,8 @@
     [self.myScrollView addSubview:view2.view];
     [view2 didMoveToParentViewController:self];
     
-
+    
+    [view3.savedVersesButton addTarget:self action:@selector(toSavedPage) forControlEvents:UIControlEventTouchDown];
     
     //Changing width of scroll view to fit UIVC's
     CGRect V2Frame = view2.view.frame;
@@ -103,7 +115,12 @@
     self.myScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, self.view.frame.size.height);
 }
 
-
+-(void)toSavedPage {
+    self.navigationController.navigationBarHidden = NO;
+    
+    [self performSegueWithIdentifier:@"ToSavedPage" sender:self];
+    
+}
 
 -(void)segmentedControlChangedValue {
     switch (segmentedControl.selectedSegmentIndex) {

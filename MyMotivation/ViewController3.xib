@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController3">
             <connections>
+                <outlet property="savedVersesButton" destination="7aY-rZ-Dwg" id="ARm-wX-dy3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,46 +17,58 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Verse 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-lO-I6n">
-                    <rect key="frame" x="156" y="127" width="288" height="109"/>
+                    <rect key="frame" x="156" y="246" width="288" height="109"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="288" id="YJP-AF-U7p"/>
-                        <constraint firstAttribute="height" constant="109" id="ZXh-4X-SOA"/>
+                        <constraint firstAttribute="height" constant="109" id="hKV-wl-m0p"/>
+                        <constraint firstAttribute="width" constant="288" id="zcH-gt-5aG"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="31"/>
                     <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marshall Development" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-Ih-SOC">
-                    <rect key="frame" x="156" y="252" width="288" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="2HX-JX-o3a"/>
-                        <constraint firstAttribute="width" constant="288" id="w6m-fb-D0Z"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
-                    <color key="textColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Powered by OurManna.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maX-gu-iUJ">
-                    <rect key="frame" x="156" y="512" width="288" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by OurManna.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maX-gu-iUJ">
+                    <rect key="frame" x="156" y="527" width="288" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="288" id="XXf-PE-hd6"/>
                         <constraint firstAttribute="height" constant="21" id="w56-l9-1Zx"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="12"/>
                     <color key="textColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-rZ-Dwg">
+                    <rect key="frame" x="8" y="26" width="101" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="101" id="D8s-WN-Wva"/>
+                        <constraint firstAttribute="height" constant="30" id="JIS-KR-2aa"/>
+                    </constraints>
+                    <state key="normal" title="Saved Verses">
+                        <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marshall Development" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-Ih-SOC">
+                    <rect key="frame" x="156" y="358" width="288" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="288" id="34k-QK-hUe"/>
+                        <constraint firstAttribute="height" constant="21" id="zNw-kG-U6M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="maX-gu-iUJ" secondAttribute="bottom" constant="52" id="038-Rw-pCW"/>
-                <constraint firstItem="ghe-lO-I6n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A3T-Yo-rLC"/>
+                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="top" secondItem="ghe-lO-I6n" secondAttribute="bottom" constant="3" id="2yW-hH-3Y8"/>
                 <constraint firstItem="maX-gu-iUJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FHw-TP-alK"/>
-                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="top" secondItem="ghe-lO-I6n" secondAttribute="bottom" constant="16" id="GeP-8d-4Tc"/>
-                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UPq-fn-Zc9"/>
-                <constraint firstItem="ghe-lO-I6n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="127" id="XHY-Wb-XzJ"/>
+                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JSc-YX-jmc"/>
+                <constraint firstItem="ghe-lO-I6n" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="M0e-Od-PFr"/>
+                <constraint firstItem="7aY-rZ-Dwg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Nal-da-kCQ"/>
+                <constraint firstItem="7aY-rZ-Dwg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="Zuf-Vj-J2O"/>
+                <constraint firstItem="ghe-lO-I6n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pY7-GS-Tiy"/>
             </constraints>
-            <point key="canvasLocation" x="111" y="380"/>
+            <point key="canvasLocation" x="-88" y="362"/>
         </view>
     </objects>
 </document>

@@ -16,6 +16,7 @@
     
 }
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet UIButton *savedVersesButton;
 
 
 @end

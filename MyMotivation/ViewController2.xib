@@ -112,7 +112,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHu-n8-qwR">
-                    <rect key="frame" x="21" y="20" width="75" height="30"/>
+                    <rect key="frame" x="8" y="20" width="75" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="6nn-QK-f7g"/>
                         <constraint firstAttribute="width" constant="75" id="RVg-E4-kuX"/>
@@ -134,7 +134,7 @@
                 <constraint firstAttribute="trailing" secondItem="PPv-bj-U9R" secondAttribute="trailing" constant="40" id="UMY-o5-ibw"/>
                 <constraint firstAttribute="bottom" secondItem="PcT-Hz-BDn" secondAttribute="bottom" id="XF1-e5-f6A"/>
                 <constraint firstItem="up4-Bk-HHj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="fHg-X5-fXe"/>
-                <constraint firstItem="iHu-n8-qwR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="hg7-qm-0RN"/>
+                <constraint firstItem="iHu-n8-qwR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="hg7-qm-0RN"/>
                 <constraint firstItem="iHu-n8-qwR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="m9K-Sn-ADc"/>
                 <constraint firstItem="PPv-bj-U9R" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mdH-oQ-SHz"/>
                 <constraint firstItem="PPv-bj-U9R" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pHc-y8-CVc"/>
