@@ -10,12 +10,18 @@
 #import "ViewController1.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "NYSegmentedControl.h"
+#import "DGActivityIndicatorView.h"
+ 
+
 
 @interface ViewController : UIViewController <UIScrollViewDelegate> {
     
     dispatch_queue_t mConcurrentQueue;
     dispatch_queue_t StartConcurrentQueue;
     dispatch_queue_t bannerConcurrentQueue;
+    NYSegmentedControl *segmentedControl;
+    DGActivityIndicatorView *activityIndicatorView;
     
 }
 

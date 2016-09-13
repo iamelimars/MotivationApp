@@ -2,12 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController3">
             <connections>
-                <outlet property="bannerView" destination="rkW-jC-aKC" id="Kd4-bu-BcT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,20 +15,47 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkW-jC-aKC" customClass="GADBannerView">
-                    <rect key="frame" x="140" y="550" width="320" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Verse 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-lO-I6n">
+                    <rect key="frame" x="156" y="127" width="288" height="109"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="320" id="42K-ae-03Q"/>
-                        <constraint firstAttribute="height" constant="50" id="vPh-kp-Snq"/>
+                        <constraint firstAttribute="width" constant="288" id="YJP-AF-U7p"/>
+                        <constraint firstAttribute="height" constant="109" id="ZXh-4X-SOA"/>
                     </constraints>
-                </view>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="31"/>
+                    <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marshall Development" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-Ih-SOC">
+                    <rect key="frame" x="156" y="252" width="288" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2HX-JX-o3a"/>
+                        <constraint firstAttribute="width" constant="288" id="w6m-fb-D0Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Powered by OurManna.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maX-gu-iUJ">
+                    <rect key="frame" x="156" y="512" width="288" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="288" id="XXf-PE-hd6"/>
+                        <constraint firstAttribute="height" constant="21" id="w56-l9-1Zx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="rkW-jC-aKC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Szu-17-S4l"/>
-                <constraint firstAttribute="bottom" secondItem="rkW-jC-aKC" secondAttribute="bottom" id="bw4-uc-UHm"/>
+                <constraint firstAttribute="bottom" secondItem="maX-gu-iUJ" secondAttribute="bottom" constant="52" id="038-Rw-pCW"/>
+                <constraint firstItem="ghe-lO-I6n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A3T-Yo-rLC"/>
+                <constraint firstItem="maX-gu-iUJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FHw-TP-alK"/>
+                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="top" secondItem="ghe-lO-I6n" secondAttribute="bottom" constant="16" id="GeP-8d-4Tc"/>
+                <constraint firstItem="Yk3-Ih-SOC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UPq-fn-Zc9"/>
+                <constraint firstItem="ghe-lO-I6n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="127" id="XHY-Wb-XzJ"/>
             </constraints>
+            <point key="canvasLocation" x="111" y="380"/>
         </view>
     </objects>
 </document>

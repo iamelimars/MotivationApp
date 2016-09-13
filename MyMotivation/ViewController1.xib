@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController1">
             <connections>
+                <outlet property="animationView" destination="97u-zi-x38" id="ix4-91-ojc"/>
                 <outlet property="bibleWebView" destination="q8y-Mw-Wqi" id="v4p-Xu-Gx6"/>
+                <outlet property="refreshButton" destination="lrf-4c-qpT" id="Wp2-G3-ceV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +24,14 @@
                         <constraint firstAttribute="height" constant="44" id="dup-Mz-lab"/>
                     </constraints>
                     <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.89126098155975342" green="0.3545563817024231" blue="0.39968371391296387" alpha="1" colorSpace="calibratedRGB"/>
+                    </textAttributes>
                     <items>
-                        <navigationItem id="Ajt-Ct-F3H">
+                        <navigationItem title="BIBLE" id="Ajt-Ct-F3H">
                             <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="lrf-4c-qpT">
-                                <color key="tintColor" red="0.91498154399999998" green="0.3783349097" blue="0.73496383430000001" alpha="0.67889569260000004" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.89126098155975342" green="0.3545563817024231" blue="0.39968371391296387" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="refreshButtonPressed:" destination="-1" id="LZN-oT-IoY"/>
                                 </connections>
@@ -37,13 +43,22 @@
                     <rect key="frame" x="0.0" y="62" width="600" height="538"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97u-zi-x38">
+                    <rect key="frame" x="275" y="275" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Djs-3E-jFq"/>
+                        <constraint firstAttribute="width" constant="50" id="cBv-7F-v3Y"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="q8y-Mw-Wqi" secondAttribute="bottom" id="18X-Bv-ARE"/>
                 <constraint firstItem="q8y-Mw-Wqi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="5tR-Dc-47B"/>
+                <constraint firstItem="97u-zi-x38" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GZM-4E-XjY"/>
                 <constraint firstItem="q8y-Mw-Wqi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H0q-Pv-9V2"/>
                 <constraint firstAttribute="trailing" secondItem="q8y-Mw-Wqi" secondAttribute="trailing" id="HPV-Fd-7Y1"/>
+                <constraint firstItem="97u-zi-x38" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M6Q-HS-Bnm"/>
                 <constraint firstAttribute="trailing" secondItem="6Kh-KW-gt4" secondAttribute="trailing" id="RTs-ql-guw"/>
                 <constraint firstItem="6Kh-KW-gt4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dzb-Rp-twO"/>
                 <constraint firstItem="6Kh-KW-gt4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="zYS-ti-cXj"/>

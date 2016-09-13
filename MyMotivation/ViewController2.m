@@ -30,6 +30,7 @@
     
     //[self getVerseOfDay];
     
+    
 }
 
 -(void) loadBanner {

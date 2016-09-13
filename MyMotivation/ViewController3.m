@@ -7,20 +7,76 @@
 //
 
 #import "ViewController3.h"
+//#import <CoreData/CoreData.h>
 
 @interface ViewController3 ()
+
+//@property (strong) NSMutableArray *devices;
+
 
 @end
 
 @implementation ViewController3
+/*
+-(NSManagedObjectContext *)managedObjectContext {
+    
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    
+    return context;
+}
+*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //[self loadBanner];
+    //self.tableView.delegate = self;
+    //self.tableView.dataSource = self;
+    
+}
+/*
+-(void)viewDidAppear:(BOOL)animated {
+    
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Device"];
+    
+    self.devices = [[managedObjectContext executeFetchRequest:fetchRequest error:nil]mutableCopy];
+    
+    [self.tableView reloadData];
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+    
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 10;
     
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+        cell.textLabel.text = @"New Row";
+    }
+    return cell;
+    
+}
+*/
 -(void) loadBanner {
     
     bannerConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
@@ -38,11 +94,7 @@
             [self.bannerView loadRequest:[GADRequest request]];
             
         });
-        
-        
     });
-    
-    
 }
 
 

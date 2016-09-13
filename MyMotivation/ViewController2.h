@@ -21,5 +21,9 @@
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @property (weak, nonatomic) IBOutlet UILabel *referenceLabel;
 @property (weak, nonatomic) IBOutlet UITextView *verseTextView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *verseSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIView *segmentedControlView;
+@property (weak, nonatomic) IBOutlet UIView *labelView;
+@property (weak, nonatomic) IBOutlet UIView *animationView;
 
 @end

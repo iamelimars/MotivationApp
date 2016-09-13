@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D949E7BA4723B322FACFF0B /* Pods_MyMotivation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A718B6D7F666DBB309824F89 /* Pods_MyMotivation.framework */; };
 		8808DAF31D728029007D2182 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808DAF21D728029007D2182 /* main.m */; };
 		8808DAF61D72802A007D2182 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808DAF51D72802A007D2182 /* AppDelegate.m */; };
 		8808DAF91D72802B007D2182 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808DAF81D72802B007D2182 /* ViewController.m */; };
@@ -23,7 +24,7 @@
 		8808DB441D728B83007D2182 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808DB421D728B83007D2182 /* ViewController3.m */; };
 		8808DB451D728B83007D2182 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808DB431D728B83007D2182 /* ViewController3.xib */; };
 		884E42541D870A9A00BFF4BB /* QuoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E42531D870A9A00BFF4BB /* QuoteData.m */; };
-		9BFAA286D3BA41C567BA9957 /* libPods-MyMotivation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDE59590FDB0B28E217F301 /* libPods-MyMotivation.a */; };
+		884E425C1D87B98700BFF4BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884E425B1D87B98700BFF4BB /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BDE59590FDB0B28E217F301 /* libPods-MyMotivation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMotivation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DAC35499A7D6A6DA129F9D4 /* Pods-MyMotivation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMotivation.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMotivation/Pods-MyMotivation.release.xcconfig"; sourceTree = "<group>"; };
 		8808DAEE1D728026007D2182 /* MyMotivation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMotivation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8808DAF21D728029007D2182 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,7 +74,9 @@
 		8808DB431D728B83007D2182 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
 		884E42521D870A9A00BFF4BB /* QuoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteData.h; sourceTree = "<group>"; };
 		884E42531D870A9A00BFF4BB /* QuoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteData.m; sourceTree = "<group>"; };
+		884E425B1D87B98700BFF4BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9133F92C83EB5E320EA1DC9B /* Pods-MyMotivation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMotivation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMotivation/Pods-MyMotivation.debug.xcconfig"; sourceTree = "<group>"; };
+		A718B6D7F666DBB309824F89 /* Pods_MyMotivation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMotivation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFAA286D3BA41C567BA9957 /* libPods-MyMotivation.a in Frameworks */,
+				884E425C1D87B98700BFF4BB /* CoreData.framework in Frameworks */,
+				4D949E7BA4723B322FACFF0B /* Pods_MyMotivation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +250,8 @@
 		C986EDE4F27DEF39AF14D481 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1BDE59590FDB0B28E217F301 /* libPods-MyMotivation.a */,
+				884E425B1D87B98700BFF4BB /* CoreData.framework */,
+				A718B6D7F666DBB309824F89 /* Pods_MyMotivation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

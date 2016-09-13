@@ -17,4 +17,5 @@
 }
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
+
 @end
