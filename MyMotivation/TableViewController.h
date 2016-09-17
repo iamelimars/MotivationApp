@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NativeAdCell.h"
+@import GoogleMobileAds;
 
 @interface TableViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet GADNativeExpressAdView *bannerView;
+
 
 @end

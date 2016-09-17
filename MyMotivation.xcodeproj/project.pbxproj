@@ -26,6 +26,11 @@
 		884E42541D870A9A00BFF4BB /* QuoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E42531D870A9A00BFF4BB /* QuoteData.m */; };
 		884E425C1D87B98700BFF4BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884E425B1D87B98700BFF4BB /* CoreData.framework */; };
 		884E425F1D87C8BA00BFF4BB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E425E1D87C8BA00BFF4BB /* TableViewController.m */; };
+		8858DE6A1D887B2900013A14 /* NativeAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858DE681D887B2900013A14 /* NativeAdCell.m */; };
+		8858DE6B1D887B2900013A14 /* NativeAdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8858DE691D887B2900013A14 /* NativeAdCell.xib */; };
+		8858DE6E1D88951400013A14 /* VersesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858DE6D1D88951400013A14 /* VersesViewController.m */; };
+		8869C9961D8B0C1100335272 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8869C9951D8B0C1100335272 /* RoundedButton.m */; };
+		8869C99C1D8B134D00335272 /* CreateSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8869C99B1D8B134D00335272 /* CreateSavedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,15 @@
 		884E425B1D87B98700BFF4BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		884E425D1D87C8BA00BFF4BB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		884E425E1D87C8BA00BFF4BB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8858DE671D887B2800013A14 /* NativeAdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdCell.h; sourceTree = "<group>"; };
+		8858DE681D887B2900013A14 /* NativeAdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdCell.m; sourceTree = "<group>"; };
+		8858DE691D887B2900013A14 /* NativeAdCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdCell.xib; sourceTree = "<group>"; };
+		8858DE6C1D88951400013A14 /* VersesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersesViewController.h; sourceTree = "<group>"; };
+		8858DE6D1D88951400013A14 /* VersesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersesViewController.m; sourceTree = "<group>"; };
+		8869C9941D8B0C1100335272 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		8869C9951D8B0C1100335272 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		8869C99A1D8B134D00335272 /* CreateSavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSavedViewController.h; sourceTree = "<group>"; };
+		8869C99B1D8B134D00335272 /* CreateSavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSavedViewController.m; sourceTree = "<group>"; };
 		9133F92C83EB5E320EA1DC9B /* Pods-MyMotivation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMotivation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMotivation/Pods-MyMotivation.debug.xcconfig"; sourceTree = "<group>"; };
 		A718B6D7F666DBB309824F89 /* Pods_MyMotivation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMotivation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,12 +200,13 @@
 		8808DB281D72805F007D2182 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8869C9991D8B132700335272 /* MainViewController */,
 				8808DB3A1D72841B007D2182 /* View Controller 1 */,
 				8808DB3B1D728732007D2182 /* View Controller 2 */,
 				8808DB461D728B90007D2182 /* View Controller 3 */,
 				884E42601D87C8DD00BFF4BB /* SavedTableViewController */,
-				8808DAF71D72802A007D2182 /* ViewController.h */,
-				8808DAF81D72802B007D2182 /* ViewController.m */,
+				8869C9981D8B130200335272 /* VerseViewController */,
+				8869C99D1D8B135200335272 /* CreateViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +223,10 @@
 		8808DB2A1D72808C007D2182 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8858DE671D887B2800013A14 /* NativeAdCell.h */,
+				8858DE681D887B2900013A14 /* NativeAdCell.m */,
+				8858DE691D887B2900013A14 /* NativeAdCell.xib */,
+				8869C9971D8B0C1800335272 /* RoundedButton */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -249,6 +268,42 @@
 				884E425E1D87C8BA00BFF4BB /* TableViewController.m */,
 			);
 			name = SavedTableViewController;
+			sourceTree = "<group>";
+		};
+		8869C9971D8B0C1800335272 /* RoundedButton */ = {
+			isa = PBXGroup;
+			children = (
+				8869C9941D8B0C1100335272 /* RoundedButton.h */,
+				8869C9951D8B0C1100335272 /* RoundedButton.m */,
+			);
+			name = RoundedButton;
+			sourceTree = "<group>";
+		};
+		8869C9981D8B130200335272 /* VerseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8858DE6C1D88951400013A14 /* VersesViewController.h */,
+				8858DE6D1D88951400013A14 /* VersesViewController.m */,
+			);
+			name = VerseViewController;
+			sourceTree = "<group>";
+		};
+		8869C9991D8B132700335272 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8808DAF71D72802A007D2182 /* ViewController.h */,
+				8808DAF81D72802B007D2182 /* ViewController.m */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
+		8869C99D1D8B135200335272 /* CreateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8869C99A1D8B134D00335272 /* CreateSavedViewController.h */,
+				8869C99B1D8B134D00335272 /* CreateSavedViewController.m */,
+			);
+			name = CreateViewController;
 			sourceTree = "<group>";
 		};
 		B2D10A25BE4162235B0664B5 /* Pods */ = {
@@ -382,6 +437,7 @@
 				8808DB401D728757007D2182 /* ViewController2.xib in Resources */,
 				8808DB391D728409007D2182 /* ViewController1.xib in Resources */,
 				8808DB041D72802E007D2182 /* LaunchScreen.storyboard in Resources */,
+				8858DE6B1D887B2900013A14 /* NativeAdCell.xib in Resources */,
 				8808DB011D72802D007D2182 /* Assets.xcassets in Resources */,
 				8808DAFC1D72802C007D2182 /* Main.storyboard in Resources */,
 			);
@@ -457,14 +513,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8808DB381D728409007D2182 /* ViewController1.m in Sources */,
+				8858DE6E1D88951400013A14 /* VersesViewController.m in Sources */,
 				8808DAF91D72802B007D2182 /* ViewController.m in Sources */,
 				8808DAFF1D72802D007D2182 /* MyMotivation.xcdatamodeld in Sources */,
 				8808DAF61D72802A007D2182 /* AppDelegate.m in Sources */,
+				8869C99C1D8B134D00335272 /* CreateSavedViewController.m in Sources */,
 				884E425F1D87C8BA00BFF4BB /* TableViewController.m in Sources */,
+				8858DE6A1D887B2900013A14 /* NativeAdCell.m in Sources */,
 				8808DAF31D728029007D2182 /* main.m in Sources */,
 				8808DB3F1D728757007D2182 /* ViewController2.m in Sources */,
 				884E42541D870A9A00BFF4BB /* QuoteData.m in Sources */,
 				8808DB441D728B83007D2182 /* ViewController3.m in Sources */,
+				8869C9961D8B0C1100335272 /* RoundedButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

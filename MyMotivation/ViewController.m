@@ -79,25 +79,30 @@
     V2Frame.origin.x = 2 * self.view.frame.size.width;
     view2.view.frame = V2Frame;
     
+    CGRect V3Frame = view3.view.frame;
+    V3Frame.origin.x = self.view.frame.size.width;
+    view3.view.frame = V3Frame;
+
+    //Setup activity indicator
     activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots tintColor:[UIColor whiteColor] size:40.0f];
     activityIndicatorView.frame = CGRectMake(0.0f, 0.0f, 50.0f, 50.0f);
-    //[activityIndicatorView setCenter:CGPointMake(view2.labelView.bounds.size.width/2.0, view2.labelView.bounds.size.height/2.0)];
     [view2.animationView addSubview:activityIndicatorView];
     [activityIndicatorView startAnimating];
     
+    //set background color of views
+    view3.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.frame andColors:@[[UIColor flatWhiteColor],[UIColor flatPowderBlueColor]]];
+    view2.view.backgroundColor = [UIColor colorWithGradientStyle:UIGradientStyleRadial withFrame:self.view.frame andColors:@[[UIColor flatWhiteColor],[UIColor flatPowderBlueColor]]];
     
-    
-        
     //Set up segmented control
     segmentedControl = [[NYSegmentedControl alloc] initWithItems:@[@"Verse Of The Day", @"Random Verse"]];
     segmentedControl.frame = CGRectMake(0.0, 0.0, view2.segmentedControlView.frame.size.width, view2.segmentedControlView.frame.size.height);
     [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue) forControlEvents:UIControlEventValueChanged];
     [view2.segmentedControlView addSubview:segmentedControl];
-    segmentedControl.titleTextColor = [UIColor flatWatermelonColorDark];
+    segmentedControl.titleTextColor = [UIColor flatBlueColorDark];
     segmentedControl.selectedTitleTextColor = [UIColor whiteColor];
     segmentedControl.selectedTitleFont = [UIFont systemFontOfSize:13.0f];
-    segmentedControl.segmentIndicatorBackgroundColor = [UIColor flatWatermelonColorDark];
-    segmentedControl.backgroundColor = [UIColor flatWatermelonColor];
+    segmentedControl.segmentIndicatorBackgroundColor = [UIColor flatBlueColorDark];
+    segmentedControl.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.4];
     segmentedControl.borderWidth = 0.0f;
     segmentedControl.segmentIndicatorBorderWidth = 0.0f;
     segmentedControl.segmentIndicatorInset = 2.0f;
@@ -108,16 +113,13 @@
     segmentedControl.usesSpringAnimations = YES;
 #endif 
     
-    CGRect V3Frame = view3.view.frame;
-    V3Frame.origin.x = self.view.frame.size.width;
-    view3.view.frame = V3Frame;
-    
+    //set scroll view content size
     self.myScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, self.view.frame.size.height);
 }
 
 -(void)toSavedPage {
-    self.navigationController.navigationBarHidden = NO;
     
+    self.navigationController.navigationBarHidden = NO;
     [self performSegueWithIdentifier:@"ToSavedPage" sender:self];
     
 }
