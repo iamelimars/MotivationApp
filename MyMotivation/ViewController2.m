@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.visualExxectView.layer.cornerRadius = 5.0;
+    self.visualExxectView.layer.cornerRadius = 8.0;
     self.visualExxectView.clipsToBounds = YES;
     
     //[self loadBanner];

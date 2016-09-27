@@ -25,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *segmentedControlView;
 @property (weak, nonatomic) IBOutlet UIView *labelView;
 @property (weak, nonatomic) IBOutlet UIView *animationView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
 @end

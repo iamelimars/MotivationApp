@@ -1,22 +1,24 @@
 //
-//  VersesViewController.m
+//  ShareViewController.m
 //  MyMotivation
 //
-//  Created by iMac on 9/13/16.
+//  Created by iMac on 9/20/16.
 //  Copyright © 2016 Marshall. All rights reserved.
 //
 
-#import "VersesViewController.h"
-#import <CoreData/CoreData.h>
+#import "ShareViewController.h"
 
-@interface VersesViewController ()
+@interface ShareViewController ()
 
 @end
 
-@implementation VersesViewController
-
+@implementation ShareViewController
+@synthesize quoteData;
 
 -(NSManagedObjectContext *)managedObjectContext {
+    
+    
+    
     
     NSManagedObjectContext *context = nil;
     id delegate = [[UIApplication sharedApplication] delegate];
@@ -28,54 +30,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //quoteData = [[QuoteData alloc]init];
     // Do any additional setup after loading the view.
-    [self loadBanner];
-    /*
-    self.NativeExpressAd.adUnitID = @"ca-app-pub-9906091830733745/6715656918";
-    self.NativeExpressAd.rootViewController = self;
+    self.navigationController.navigationBarHidden = NO;
+}
+-(void)viewDidAppear:(BOOL)animated {
     
-    GADRequest *request = [GADRequest request];
-    request.testDevices = @[ kGADSimulatorID ];
-    [self.NativeExpressAd loadRequest:request];
-    */
-    if (self.device) {
-        //self.verseTextView.textColor = [UIColor blackColor];
-        [self.verseTextView setText:[self.device valueForKey:@"verse"]];
-        self.referenceLabel.text = [NSString stringWithFormat:@"%@, %@", [self.device valueForKey:@"reference"], [self.device valueForKey:@"version"]];
-        //[self.referenceLabel setText:[self.device valueForKey:@"reference"]];
-        //[self.versionTextField setText:[self.device valueForKey:@"version"]];
-        
-    }
     
 }
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) loadBanner {
-    
-    bannerConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(bannerConcurrentQueue, ^(void) {
-        
-        self.bannerView.adUnitID = @"ca-app-pub-9906091830733745/7340255714";
-        self.bannerView.rootViewController = self;
-        GADRequest *request = [GADRequest request];
-        request.testDevices = @[
-                                @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
-                                ];
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            
-            [self.bannerView loadRequest:[GADRequest request]];
-            
-        });
-        
-    });
-    
-    
-}
+
 /*
 #pragma mark - Navigation
 
@@ -86,14 +53,14 @@
 }
 */
 
-- (IBAction)imessageButton:(id)sender {
+- (IBAction)iMessageButton:(id)sender {
     
     MFMessageComposeViewController *textComposer = [[MFMessageComposeViewController alloc] init];
     [textComposer setMessageComposeDelegate:self];
     
     if ([MFMessageComposeViewController canSendText]) {
         [textComposer setRecipients:NULL];
-        [textComposer setBody:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", [self.device valueForKey:@"verse"] ,[self.device valueForKey:@"reference"], [self.device valueForKey:@"version"]]];
+        [textComposer setBody:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", quoteData.verse ,quoteData.reference, quoteData.version]];
         [self presentViewController:textComposer animated:YES completion:NULL];
         
     } else {
@@ -102,29 +69,29 @@
         
     }
 
-    
 }
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
 - (IBAction)facebookButton:(id)sender {
-    
     
     MFMailComposeViewController *imageEmail = [[MFMailComposeViewController alloc]init];
     imageEmail.mailComposeDelegate = self;
     [imageEmail setSubject:@"Verse from Versify App"];
-    NSString *bodyOfEmail = [NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", [self.device valueForKey:@"verse"] ,[self.device valueForKey:@"reference"], [self.device valueForKey:@"version"]];
+    NSString *bodyOfEmail = [NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", quoteData.verse ,quoteData.reference, quoteData.version];
     [imageEmail setMessageBody:bodyOfEmail isHTML:NO];
-    
-    [self presentViewController:imageEmail animated:YES completion:NULL];
 
+    [self presentViewController:imageEmail animated:YES completion:NULL];
+    
     /*
     SLComposer = [[SLComposeViewController alloc]init];
     SLComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [SLComposer setInitialText:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from Daily Verse App", [self.device valueForKey:@"verse"] ,[self.device valueForKey:@"reference"], [self.device valueForKey:@"version"]]];
+    [SLComposer setInitialText:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from Daily Verse App", quoteData.verse ,quoteData.reference, quoteData.version]];
     [self presentViewController:SLComposer animated:YES completion:nil];
     */
 }
+
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result)
@@ -149,11 +116,12 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (IBAction)twitterButton:(id)sender {
+
+- (IBAction)twitterButtonPressed:(id)sender {
     
     twitterSLComposer = [[SLComposeViewController alloc]init];
     twitterSLComposer = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [twitterSLComposer setInitialText:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", [self.device valueForKey:@"verse"] ,[self.device valueForKey:@"reference"], [self.device valueForKey:@"version"]]];
+    [twitterSLComposer setInitialText:[NSString stringWithFormat:@"%@ \r \r %@, %@ \r \r Sent from the Versify App", quoteData.verse ,quoteData.reference, quoteData.version]];
     [self presentViewController:twitterSLComposer animated:YES completion:nil];
     
 }

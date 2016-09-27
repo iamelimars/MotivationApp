@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "NativeAdCell.h"
+#import "SavedVerseCell.h"
+#import "CreateSavedViewController.h"
+#import "VersesViewController.h"
+
 @import GoogleMobileAds;
 
 @interface TableViewController : UITableViewController

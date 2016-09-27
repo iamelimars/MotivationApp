@@ -7,6 +7,7 @@
 //
 
 #import "CreateSavedViewController.h"
+#import <CoreData/CoreData.h>
 
 @interface CreateSavedViewController ()
 
@@ -15,7 +16,18 @@
 @end
 
 @implementation CreateSavedViewController
-@synthesize scrollView, activeField;
+@synthesize scrollView, activeField, device;
+
+-(NSManagedObjectContext *)managedObjectContext {
+    
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,9 +37,9 @@
     self.verseTextView.delegate = self;
     scrollView.delegate = self;
     
-    scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    //scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
     //double viewHeight = self.view.frame.size.height;
-    self.contentHeightConstraint.constant = self.view.frame.size.height;
+    //self.contentHeightConstraint.constant = self.view.frame.size.height;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification
@@ -38,6 +50,16 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
+    
+    if (self.device) {
+        self.verseTextView.textColor = [UIColor blackColor];
+        [self.verseTextView setText:[self.device valueForKey:@"verse"]];
+        [self.referenceTextField setText:[self.device valueForKey:@"reference"]];
+        [self.versionTextField setText:[self.device valueForKey:@"version"]];
+
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,18 +68,23 @@
 }
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
-    self.verseTextView.text = @"";
-    self.verseTextView.textColor = [UIColor blackColor];
+    if (!self.device) {
+        
+        self.verseTextView.text = @"";
+        self.verseTextView.textColor = [UIColor blackColor];
+        
+    }
     return YES;
 }
 
 -(void) textViewDidChange:(UITextView *)textView
 {
-    
-    if(self.verseTextView.text.length == 0){
-        self.verseTextView.textColor = [UIColor lightGrayColor];
-        self.verseTextView.text = @"Type Here: 1 In the beginning God created the heavens and the earth. 2 Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.";
-        [self.verseTextView resignFirstResponder];
+    if (!self.device) {
+        if(self.verseTextView.text.length == 0){
+            self.verseTextView.textColor = [UIColor lightGrayColor];
+            self.verseTextView.text = @"Type Here: 1 In the beginning God created the heavens and the earth. 2 Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.";
+            [self.verseTextView resignFirstResponder];
+        }
     }
 }
 
@@ -110,6 +137,9 @@
     self.activeField = nil;
 }
 
+
+
+
 /*
 #pragma mark - Navigation
 
@@ -120,4 +150,37 @@
 }
 */
 
+- (IBAction)saveDataButton:(id)sender {
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+   
+    if (self.device) {
+        [self.device setValue:self.verseTextView.text forKey:@"verse"];
+        [self.device setValue:self.referenceTextField.text forKey:@"reference"];
+        [self.device setValue:self.versionTextField.text forKey:@"version"];
+    } else {
+    
+        NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
+        [newDevice setValue:self.verseTextView.text forKey:@"verse"];
+        [newDevice setValue:self.referenceTextField.text forKey:@"reference"];
+        [newDevice setValue:self.versionTextField.text forKey:@"version"];
+    
+    }
+        
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        
+        NSLog(@"%@,  %@", error, [error localizedDescription]);
+        
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)DismissKeyboard:(id)sender {
+    
+    [self resignFirstResponder];
+    
+}
 @end

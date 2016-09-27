@@ -7,27 +7,41 @@
 //
 
 #import "ViewController.h"
-
+#import <CoreData/CoreData.h>
 #import "NYSegmentedControl.h"
 #import <ChameleonFramework/Chameleon.h>
 
 
 @interface ViewController ()
 
+@property (strong) NSMutableArray *devices;
+
 @end
 
 @implementation ViewController
 
-@synthesize view2;
+@synthesize view2, device, quoteData;
 
+-(NSManagedObjectContext *)managedObjectContext {
+    
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    quoteData = [[QuoteData alloc]init];
+    
     self.myScrollView.delegate = self;
     [self createPageViewController];
     [self getVerseOfDay];
     [self loadBanner];
+    
     CGRect frame = self.myScrollView.frame;
     frame.origin.x = frame.size.width * 1;
     frame.origin.y = 0;
@@ -46,7 +60,40 @@
    
     
 }
-
+-(void)savedButtonPressed {
+    
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:context];
+    
+    [newDevice setValue:quoteData.verse forKey:@"verse"];
+    [newDevice setValue:quoteData.reference forKey:@"reference"];
+    [newDevice setValue:quoteData.version forKey:@"version"];
+    
+    NSError *error = nil;
+    
+    if (![context save:&error]) {
+        
+        NSLog(@"%@,  %@", error, [error localizedDescription]);
+        
+    }
+    
+    NSLog(@"SavedPressed");
+    [self toSavedPage];
+    
+}
+-(void)shareButtonPressed {
+    
+    [self performSegueWithIdentifier:@"toShareViewC" sender:self];
+    
+    
+}
+-(void) settingsButtonPressed {
+    
+    [self performSegueWithIdentifier:@"toSettingsPage" sender:self];
+    
+    
+}
 -(void)createPageViewController {
     
     
@@ -71,6 +118,11 @@
     [self.myScrollView addSubview:view2.view];
     [view2 didMoveToParentViewController:self];
     
+    [view3.settingsButton addTarget:self action:@selector(settingsButtonPressed) forControlEvents:UIControlEventTouchDown];
+    
+    [view2.shareButton addTarget:self action:@selector(shareButtonPressed) forControlEvents:UIControlEventTouchDown];
+    
+    [view2.saveButton addTarget:self action:@selector(savedButtonPressed) forControlEvents:UIControlEventTouchDown];
     
     [view3.savedVersesButton addTarget:self action:@selector(toSavedPage) forControlEvents:UIControlEventTouchDown];
     
@@ -159,19 +211,33 @@
     dispatch_async(mConcurrentQueue, ^(void){
         NSError *error;
         NSData *data = [NSData dataWithContentsOfURL:url];
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+        
+        //NSLog(@"%@", &error);
         NSDictionary *verse = json[@"verse"];
         NSDictionary *details = verse[@"details"];
         NSString *reference = details[@"reference"];
         NSString *version = details[@"version"];
         NSString *text = [NSString stringWithFormat:@"%@", details[@"text"]];
         NSString *referenceText = [NSString stringWithFormat:@"%@, %@", reference, version];
+        
+        quoteData.verse = text;
+        quoteData.reference = [NSString stringWithFormat:@"%@", reference];
+        quoteData.version = [NSString stringWithFormat:@"%@", version];
+        
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             
             [activityIndicatorView stopAnimating];
-
-            view2.verseTextView.text = text;
-            view2.referenceLabel.text = referenceText;
+            
+            if ([text  isEqual: @"(null)"]) {
+                NSLog(@"Sorry we couldnt get the verse of the day for you, Try again later");
+                view2.verseTextView.text = @"Sorry we couldnt get the verse of the day for you, Try again later?";
+                view2.referenceLabel.text = @"Sorry.";
+            } else {
+            
+                view2.verseTextView.text = text;
+                view2.referenceLabel.text = referenceText;
+            }
             
         });
         
@@ -194,21 +260,33 @@
     dispatch_async(mConcurrentQueue, ^(void){
         NSError *error;
         NSData *data = [NSData dataWithContentsOfURL:url];
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         NSDictionary *verse = json[@"verse"];
         NSDictionary *details = verse[@"details"];
         NSString *reference = details[@"reference"];
         NSString *version = details[@"version"];
         NSString *text = [NSString stringWithFormat:@"%@", details[@"text"]];
         NSString *referenceText = [NSString stringWithFormat:@"%@, %@", reference, version];
+        
+        quoteData.verse = text;
+        quoteData.reference = [NSString stringWithFormat:@"%@", reference];
+        quoteData.version = [NSString stringWithFormat:@"%@", version];
+
+        
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [activityIndicatorView stopAnimating];
 
-            view2.verseTextView.text = text;
-            view2.referenceLabel.text = referenceText;
+            if ([text  isEqual: @"(null)"]) {
+                NSLog(@"Sorry we couldnt get the verse of the day for you, Try again later");
+                view2.verseTextView.text = @"Sorry we couldnt get a random verse for you, Try again later?";
+                view2.referenceLabel.text = @"Sorry.";
+            } else {
+                
+                view2.verseTextView.text = text;
+                view2.referenceLabel.text = referenceText;
+            }
             
         });
-        
         
     });
     
@@ -226,13 +304,13 @@
         request.testDevices = @[
                                 @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
                                 ];
-        NSLog(@"newAd");
+        
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.bannerView loadRequest:[GADRequest request]];
         });
         _bannerView.delegate = nil;
     });
-    NSLog(@"oldAd");
+    
     
 }
 
@@ -265,6 +343,20 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"toShareViewC"]) {
+        //NSManagedObjectModel *selectedDevice = [self.devices objectAtIndex:[[self.tableView indexPathForSelectedRow]row]];
+        ShareViewController *addView = segue.destinationViewController;
+        addView.quoteData = quoteData;
+        
+        
+    }
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

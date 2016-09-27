@@ -26,7 +26,7 @@
 */
     
     self.bibleWebView.delegate = self;
-    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots tintColor:[UIColor flatWatermelonColor] size:40.0f];
+    activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots tintColor:[UIColor flatBlueColor] size:40.0f];
     activityIndicatorView.frame = CGRectMake(0.0f, 0.0f, 50.0f, 50.0f);
     
     [self.animationView addSubview:activityIndicatorView];

@@ -12,6 +12,9 @@
 #import "ViewController3.h"
 #import "NYSegmentedControl.h"
 #import "DGActivityIndicatorView.h"
+#import "QuoteData.h"
+#import "ShareViewController.h"
+
  
 
 
@@ -31,6 +34,10 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *myPageControl;
 
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
+
+@property (strong) NSManagedObjectModel *device;
+
+@property QuoteData *quoteData;
 
 @end
 

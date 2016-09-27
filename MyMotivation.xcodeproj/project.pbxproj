@@ -23,6 +23,9 @@
 		8808DB401D728757007D2182 /* ViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808DB3E1D728757007D2182 /* ViewController2.xib */; };
 		8808DB441D728B83007D2182 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8808DB421D728B83007D2182 /* ViewController3.m */; };
 		8808DB451D728B83007D2182 /* ViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8808DB431D728B83007D2182 /* ViewController3.xib */; };
+		880994BF1D91BB7500C7E8B7 /* SavedVerseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 880994BE1D91BB7500C7E8B7 /* SavedVerseCell.m */; };
+		880994C31D91FB7D00C7E8B7 /* VerseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 880994C21D91FB7C00C7E8B7 /* VerseLabel.m */; };
+		880994C71D9226C200C7E8B7 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880994C61D9226C200C7E8B7 /* ShareViewController.m */; };
 		884E42541D870A9A00BFF4BB /* QuoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E42531D870A9A00BFF4BB /* QuoteData.m */; };
 		884E425C1D87B98700BFF4BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884E425B1D87B98700BFF4BB /* CoreData.framework */; };
 		884E425F1D87C8BA00BFF4BB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884E425E1D87C8BA00BFF4BB /* TableViewController.m */; };
@@ -31,6 +34,7 @@
 		8858DE6E1D88951400013A14 /* VersesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858DE6D1D88951400013A14 /* VersesViewController.m */; };
 		8869C9961D8B0C1100335272 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8869C9951D8B0C1100335272 /* RoundedButton.m */; };
 		8869C99C1D8B134D00335272 /* CreateSavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8869C99B1D8B134D00335272 /* CreateSavedViewController.m */; };
+		8883B5751D9629CC00D97397 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8883B5741D9629CC00D97397 /* SettingsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,12 @@
 		8808DB411D728B83007D2182 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		8808DB421D728B83007D2182 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		8808DB431D728B83007D2182 /* ViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController3.xib; sourceTree = "<group>"; };
+		880994BD1D91BB7500C7E8B7 /* SavedVerseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedVerseCell.h; sourceTree = "<group>"; };
+		880994BE1D91BB7500C7E8B7 /* SavedVerseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedVerseCell.m; sourceTree = "<group>"; };
+		880994C11D91FB7C00C7E8B7 /* VerseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerseLabel.h; sourceTree = "<group>"; };
+		880994C21D91FB7C00C7E8B7 /* VerseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerseLabel.m; sourceTree = "<group>"; };
+		880994C51D9226C200C7E8B7 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		880994C61D9226C200C7E8B7 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		884E42521D870A9A00BFF4BB /* QuoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteData.h; sourceTree = "<group>"; };
 		884E42531D870A9A00BFF4BB /* QuoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteData.m; sourceTree = "<group>"; };
 		884E425B1D87B98700BFF4BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -92,6 +102,8 @@
 		8869C9951D8B0C1100335272 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
 		8869C99A1D8B134D00335272 /* CreateSavedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSavedViewController.h; sourceTree = "<group>"; };
 		8869C99B1D8B134D00335272 /* CreateSavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSavedViewController.m; sourceTree = "<group>"; };
+		8883B5731D9629CC00D97397 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		8883B5741D9629CC00D97397 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		9133F92C83EB5E320EA1DC9B /* Pods-MyMotivation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMotivation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMotivation/Pods-MyMotivation.debug.xcconfig"; sourceTree = "<group>"; };
 		A718B6D7F666DBB309824F89 /* Pods_MyMotivation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMotivation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -207,6 +219,8 @@
 				884E42601D87C8DD00BFF4BB /* SavedTableViewController */,
 				8869C9981D8B130200335272 /* VerseViewController */,
 				8869C99D1D8B135200335272 /* CreateViewController */,
+				880994C81D9226CC00C7E8B7 /* ShareViewController */,
+				8883B5721D9629A200D97397 /* Settings View Controller */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,10 +237,10 @@
 		8808DB2A1D72808C007D2182 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8858DE671D887B2800013A14 /* NativeAdCell.h */,
-				8858DE681D887B2900013A14 /* NativeAdCell.m */,
-				8858DE691D887B2900013A14 /* NativeAdCell.xib */,
+				880994BC1D91BB3C00C7E8B7 /* NativeAdCell */,
 				8869C9971D8B0C1800335272 /* RoundedButton */,
+				880994C01D91BB8800C7E8B7 /* SavedCell */,
+				880994C41D91FB8F00C7E8B7 /* VerseLabel */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -259,6 +273,43 @@
 				8808DB431D728B83007D2182 /* ViewController3.xib */,
 			);
 			name = "View Controller 3";
+			sourceTree = "<group>";
+		};
+		880994BC1D91BB3C00C7E8B7 /* NativeAdCell */ = {
+			isa = PBXGroup;
+			children = (
+				8858DE671D887B2800013A14 /* NativeAdCell.h */,
+				8858DE681D887B2900013A14 /* NativeAdCell.m */,
+				8858DE691D887B2900013A14 /* NativeAdCell.xib */,
+			);
+			name = NativeAdCell;
+			sourceTree = "<group>";
+		};
+		880994C01D91BB8800C7E8B7 /* SavedCell */ = {
+			isa = PBXGroup;
+			children = (
+				880994BD1D91BB7500C7E8B7 /* SavedVerseCell.h */,
+				880994BE1D91BB7500C7E8B7 /* SavedVerseCell.m */,
+			);
+			name = SavedCell;
+			sourceTree = "<group>";
+		};
+		880994C41D91FB8F00C7E8B7 /* VerseLabel */ = {
+			isa = PBXGroup;
+			children = (
+				880994C11D91FB7C00C7E8B7 /* VerseLabel.h */,
+				880994C21D91FB7C00C7E8B7 /* VerseLabel.m */,
+			);
+			name = VerseLabel;
+			sourceTree = "<group>";
+		};
+		880994C81D9226CC00C7E8B7 /* ShareViewController */ = {
+			isa = PBXGroup;
+			children = (
+				880994C51D9226C200C7E8B7 /* ShareViewController.h */,
+				880994C61D9226C200C7E8B7 /* ShareViewController.m */,
+			);
+			name = ShareViewController;
 			sourceTree = "<group>";
 		};
 		884E42601D87C8DD00BFF4BB /* SavedTableViewController */ = {
@@ -304,6 +355,15 @@
 				8869C99B1D8B134D00335272 /* CreateSavedViewController.m */,
 			);
 			name = CreateViewController;
+			sourceTree = "<group>";
+		};
+		8883B5721D9629A200D97397 /* Settings View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8883B5731D9629CC00D97397 /* SettingsTableViewController.h */,
+				8883B5741D9629CC00D97397 /* SettingsTableViewController.m */,
+			);
+			name = "Settings View Controller";
 			sourceTree = "<group>";
 		};
 		B2D10A25BE4162235B0664B5 /* Pods */ = {
@@ -514,6 +574,8 @@
 			files = (
 				8808DB381D728409007D2182 /* ViewController1.m in Sources */,
 				8858DE6E1D88951400013A14 /* VersesViewController.m in Sources */,
+				880994C71D9226C200C7E8B7 /* ShareViewController.m in Sources */,
+				880994C31D91FB7D00C7E8B7 /* VerseLabel.m in Sources */,
 				8808DAF91D72802B007D2182 /* ViewController.m in Sources */,
 				8808DAFF1D72802D007D2182 /* MyMotivation.xcdatamodeld in Sources */,
 				8808DAF61D72802A007D2182 /* AppDelegate.m in Sources */,
@@ -523,8 +585,10 @@
 				8808DAF31D728029007D2182 /* main.m in Sources */,
 				8808DB3F1D728757007D2182 /* ViewController2.m in Sources */,
 				884E42541D870A9A00BFF4BB /* QuoteData.m in Sources */,
+				8883B5751D9629CC00D97397 /* SettingsTableViewController.m in Sources */,
 				8808DB441D728B83007D2182 /* ViewController3.m in Sources */,
 				8869C9961D8B0C1100335272 /* RoundedButton.m in Sources */,
+				880994BF1D91BB7500C7E8B7 /* SavedVerseCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

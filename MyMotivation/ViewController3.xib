@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController3">
             <connections>
                 <outlet property="savedVersesButton" destination="7aY-rZ-Dwg" id="ARm-wX-dy3"/>
+                <outlet property="settingsButton" destination="BCJ-K6-1Aa" id="TgL-dc-Nn6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Verse 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-lO-I6n">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versify 📖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-lO-I6n">
                     <rect key="frame" x="156" y="246" width="288" height="109"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="109" id="hKV-wl-m0p"/>
@@ -56,19 +57,32 @@
                     <color key="textColor" red="0.17257410287857056" green="0.21834245324134827" blue="0.44677489995956421" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCJ-K6-1Aa">
+                    <rect key="frame" x="558" y="31" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="4tV-sk-5wR"/>
+                        <constraint firstAttribute="width" constant="25" id="IZz-eT-leg"/>
+                    </constraints>
+                    <state key="normal" image="Settings 3-50"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="maX-gu-iUJ" secondAttribute="bottom" constant="52" id="038-Rw-pCW"/>
                 <constraint firstItem="Yk3-Ih-SOC" firstAttribute="top" secondItem="ghe-lO-I6n" secondAttribute="bottom" constant="3" id="2yW-hH-3Y8"/>
                 <constraint firstItem="maX-gu-iUJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FHw-TP-alK"/>
+                <constraint firstItem="BCJ-K6-1Aa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="31" id="FpU-5r-G11"/>
                 <constraint firstItem="Yk3-Ih-SOC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JSc-YX-jmc"/>
                 <constraint firstItem="ghe-lO-I6n" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="M0e-Od-PFr"/>
                 <constraint firstItem="7aY-rZ-Dwg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Nal-da-kCQ"/>
                 <constraint firstItem="7aY-rZ-Dwg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="Zuf-Vj-J2O"/>
+                <constraint firstAttribute="trailing" secondItem="BCJ-K6-1Aa" secondAttribute="trailing" constant="17" id="bVD-3w-Vq8"/>
                 <constraint firstItem="ghe-lO-I6n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pY7-GS-Tiy"/>
             </constraints>
             <point key="canvasLocation" x="-88" y="362"/>
         </view>
     </objects>
+    <resources>
+        <image name="Settings 3-50" width="50" height="50"/>
+    </resources>
 </document>
