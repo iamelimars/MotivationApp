@@ -51,10 +51,7 @@
     AdCell.ExpressNativeBanner.rootViewController = self;
     //self.ExpressNativeBanner.frame = CGRectMake(0.0, 0.0, AdCell.contentView.frame.size.width, AdCell.frame.size.height);
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[
-                            @"fd3efe9a2aa0d5b371f5a7e868f7d08a",
-                            kGADSimulatorID // Eli's Iphone
-                            ];
+    
     [AdCell.ExpressNativeBanner loadRequest:[GADRequest request]];
     
 }

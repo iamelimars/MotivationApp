@@ -40,8 +40,8 @@
     self.myScrollView.delegate = self;
     [self createPageViewController];
     [self getVerseOfDay];
-    [self loadBanner];
-    
+    [self loadBanner]; 
+    self.bannerView.hidden = YES;
     CGRect frame = self.myScrollView.frame;
     frame.origin.x = frame.size.width * 1;
     frame.origin.y = 0;
@@ -301,9 +301,9 @@
         self.bannerView.adUnitID = @"ca-app-pub-9906091830733745/7340255714";
         self.bannerView.rootViewController = self;
         GADRequest *request = [GADRequest request];
-        request.testDevices = @[
-                                @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
-                                ];
+        //request.testDevices = @[
+        //                        @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
+        //                        ];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.bannerView loadRequest:[GADRequest request]];
@@ -328,7 +328,7 @@
             break;
         case 1:
             self.myPageControl.currentPage = 1;
-            self.bannerView.hidden = NO;
+            self.bannerView.hidden = YES;
             break;
         case 2:
             self.myPageControl.currentPage = 2;

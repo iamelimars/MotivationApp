@@ -63,9 +63,7 @@
         self.bannerView.adUnitID = @"ca-app-pub-9906091830733745/7340255714";
         self.bannerView.rootViewController = self;
         GADRequest *request = [GADRequest request];
-        request.testDevices = @[
-                                @"fd3efe9a2aa0d5b371f5a7e868f7d08a"  // Eli's Iphone
-                                ];
+        
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             
             [self.bannerView loadRequest:[GADRequest request]];
