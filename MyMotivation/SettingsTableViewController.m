@@ -166,7 +166,7 @@
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         localNotification.soundName = UILocalNotificationDefaultSoundName;
         localNotification.repeatInterval = kCFCalendarUnitDay;
-        localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] +1;
+        //localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] +1;
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
         NSArray *nofiCount = [[UIApplication sharedApplication] scheduledLocalNotifications];

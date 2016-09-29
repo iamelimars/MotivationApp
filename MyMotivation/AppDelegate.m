@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     
     [GADMobileAds configureWithApplicationID:@"ca-app-pub-9906091830733745~5863522517"];
-    
+    application.applicationIconBadgeNumber = 0;
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound|UIUserNotificationTypeBadge
